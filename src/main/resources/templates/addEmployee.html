@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8">
+	<title>Add Employee</title>
+
+</head>
+<style>
+
+button:hover {
+  background-color: #4CAF50; /* Green */
+  color: white;
+  }
+</style>
+
+
+<body>
+	<div align="center">
+		<h1> Add new employee</h1>
+		<br/>
+		<form action="#" th:action="@{/save}" th:object="${employee}" method="post">
+			<table border="0" cellpadding="10">
+				<tr>
+					<td>EMPLOYEE ID : </td>
+					<td><input type="text" th:field="*{id}" required/></td>
+				</tr>
+				<tr>
+					<td>FORENAME : </td>
+					<td><input type="text" th:field="*{forename}" required/></td>
+					
+				</tr>
+				<tr>
+					<td>SURNAME : </td>
+					<td><input type="text" th:field="*{surname}" required/></td>
+					
+				</tr>
+				<tr>
+					<td>AGE : </td>
+					<td><input type="text" th:field="*{age}" required/></td>
+				</tr>
+				<tr>
+					<td>COMPANY : </td>
+					<td><input type="text" th:field="*{company}" required/></td>
+				</tr>
+				<tr>
+					<td>POSTCODE : </td>
+					<td><input type="text" th:field="*{postcode}" required/></td>
+				</tr>
+				<tr>
+					<td colspan="1"><button  type="submit">Submit</button></td>
+				</tr>
+			</table>
+		</form>
+	</div>	
+</body>
+</html>

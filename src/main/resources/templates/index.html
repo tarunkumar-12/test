@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8">
+<title>EmployeeData</title>
+</head>
+<style>
+a:link, a:visited {
+  background-color: #f44336;
+  color: white;
+  padding: 15px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+
+a:hover, a:active {
+  background-color: red;
+}
+
+</style>
+<body>
+
+<br>
+	<div align="center">
+		<h1>Employee Details</h1>	
+		
+		<table  border="1" cellpadding="10">
+			<thead>
+				<tr>
+					<th>employee Id</th>
+					<th>Forename</th>
+					<th>Surname</th>
+					<th>Age</th>
+					<th>Company</th>
+					<th>PostCode</th>	
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="emp: ${employee}">
+				<td th:text="${emp.id}">EmployeeId</td>
+				<td th:text="${emp.forename}">ForeName</td>
+				<td th:text="${emp.surname}">SurName</td>
+				<td th:text="${emp.age}">Age</td>
+				<td th:text="${emp.company}">Company</td>
+				<td th:text="${emp.postcode}">PostCode</td>
+
+				</tr>
+			</tbody>		
+		</table>
+		<br/><br/>
+		<a href="/add">Add New Employee</a>
+		<br>
+</div>
+</body>
+</html>
