@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="utf-8">
 <title>EmployeeData</title>
@@ -22,18 +22,18 @@ a:hover, a:active {
 <body>
 
 <br>
-	<div align="center">
 		<h1>Employee Details</h1>	
 		
-		<table  border="1" cellpadding="10">
+		<table >
+		<caption>Employee details</caption>
 			<thead>
 				<tr>
-					<th>employee Id</th>
-					<th>Forename</th>
-					<th>Surname</th>
-					<th>Age</th>
-					<th>Company</th>
-					<th>PostCode</th>	
+					<th id="EMPLOYEE ID">employee Id</th>
+					<th id="Forename">Forename</th>
+					<th id="Surname">Surname</th>
+					<th id="Age">Age</th>
+					<th id="Company">Company</th>
+					<th id="PostCode">PostCode</th>	
 				</tr>
 			</thead>
 			<tbody>
@@ -51,6 +51,5 @@ a:hover, a:active {
 		<br/><br/>
 		<a href="/add">Add New Employee</a>
 		<br>
-</div>
 </body>
 </html>

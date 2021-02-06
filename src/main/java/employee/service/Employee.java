@@ -10,16 +10,16 @@ public class Employee{
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	public int id;
-	public String forename;
-	public String surname;
-	public int age;
-	public String company;
-	public int postcode;
+	 int id;
+	 String forename;
+	 String surname;
+	 int age;
+	 String company;
+	 int postcode;
 	
 	public Employee() {}
 
-	public Employee(int id, String forename, String surname, int age, String company, int postcode) {
+	public Employee(String forename, String surname, int age, String company, int postcode, int id) {
 		this.id =id;
 		this.forename = forename;
 		this.surname = surname;

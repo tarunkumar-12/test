@@ -24,24 +24,22 @@ public class EmployeeRestController {
  @GetMapping("/emp")
  public ResponseEntity<List<Employee>> getAllEmployees() {
  List<Employee> list = empservice.getAll();
-//HttpHeaders header=new HttpHeaders()
- // return ResponseEntity.status(HttpStatus.OK).headers(header).body(list);
- return new ResponseEntity<List<Employee>>(list, new HttpHeaders(), HttpStatus.OK);
+ return new ResponseEntity<> (list, new HttpHeaders(), HttpStatus.OK);
  }
 			 
 			 
 @PutMapping("/update")
- public ResponseEntity<String> update(@PathVariable(value = "id") Integer id,  @RequestBody Employee e) throws RecordNotFoundException 
+ public ResponseEntity<String> update(@PathVariable(value = "id") Integer id,  @RequestBody Employee employee) throws RecordNotFoundException 
 	{
 	Employee emp =emprepo .findById(id).orElseThrow(()  -> new RecordNotFoundException("No record found  on this id "+ id));
-  // emp.setId(e.getId());
-	emp.setForename(e.getForename());
-	emp.setSurname(e.getSurname());
-	emp.setAge(e.getAge());
-	emp.setCompany(e.getCompany());
-	emp.setPostcode(e.getPostcode());
+ 
+	emp.setForename(employee.getForename());
+	emp.setSurname(employee.getSurname());
+	emp.setAge(employee.getAge());
+	emp.setCompany(employee.getCompany());
+	emp.setPostcode(employee.getPostcode());
 	emprepo.save(emp);
-	return new ResponseEntity<String>("Recored updated successfully", HttpStatus.OK);
+	return new ResponseEntity<>("Recored updated successfully", HttpStatus.OK);
 				 	
 	 }
 			 

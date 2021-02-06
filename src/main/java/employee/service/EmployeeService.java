@@ -2,9 +2,7 @@ package employee.service;
 
 import java.util.List;
 import java.util.Optional;
-
 import javax.transaction.Transactional;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -27,9 +25,6 @@ public class EmployeeService {
 		emprepo.save(employee);
 	}
 	
-	public Employee get(int id){
-		return emprepo.findById(id).get();
-	}
  
 	
 	public Employee getEmployeeById(int id) throws RecordNotFoundException 
@@ -44,11 +39,13 @@ public class EmployeeService {
 		}
 	}
 	
-	
-	public void saveOrUpdate(Employee emp) {
-		emprepo.save(emp);
+	public Employee saveOrUpdate(Employee emp) {
+		return emprepo.save(emp);
 	}
 	
+	public Employee get(int id){
+		return emprepo.findById(id).get();
+	}
 
 	public void deleteEmployeeById(int id) throws RecordNotFoundException {
 		Optional<Employee> employee = emprepo.findById(id);
